@@ -34,7 +34,15 @@ for message in st.session_state.messages:
                         st.markdown(trace["text"])
 
         st.markdown(message["content"][0]["text"])
-        # TODO show images
+        
+        # Display images if available
+        if "images" in message and message["images"]:
+            for img_path in message["images"]:
+                try:
+                    image = Image.open(img_path)
+                    st.image(image, caption=img_path.split("/")[-1])
+                except Exception as e:
+                    st.error(f"Error displaying image {img_path}: {e}")
 
 if prompt := st.chat_input("How can I help??"):
     st.session_state.messages.append({"role": "user", "content": [{"text": prompt}]})
@@ -53,12 +61,19 @@ if prompt := st.chat_input("How can I help??"):
 
         message_placeholder.markdown(result["text"])
 
-        # TODO show images
+        # Display images if available
+        if result["images"]:
+            for img_path in result["images"]:
+                try:
+                    image = Image.open(img_path)
+                    st.image(image, caption=img_path.split("/")[-1])
+                except Exception as e:
+                    st.error(f"Error displaying image {img_path}: {e}")
 
     st.session_state.messages.append(
         {
             "role": "assistant",
-            "content": [{"text": f"{full_response}"}],
+            "content": [{"text": result["text"]}],  # Use result["text"] instead of full_response
             "images": result["images"],
             "traces": result["traces"],
         }
