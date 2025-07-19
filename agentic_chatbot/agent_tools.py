@@ -5,7 +5,7 @@ import boto3
 import matplotlib.pyplot as plt
 import streamlit as st
 
-AGENT_ID = "A9UBJ0JZLI"
+AGENT_ID = "WKBQG3JFWO"
 REGION = "us-west-2"
 IMAGE_FOLDER = "images"
 
