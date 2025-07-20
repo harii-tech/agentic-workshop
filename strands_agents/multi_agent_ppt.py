@@ -219,7 +219,22 @@ def run_cloud_migration_demo():
     3. Migration runbook and documentation
     4. Executive presentation for board approval
     """
-
+    migration_request = """
+Plan migration for enterprise with:
+- Microservices architecture (20+ services)
+- Multiple databases (Oracle, MongoDB, Redis)
+- Global user base (5M+ users)
+- Strict compliance requirements (HIPAA, SOX)
+- $1M+ current infrastructure costs
+"""
+    migration_request = """
+Plan migration for a startup with:
+- Simple web application (Node.js)
+- PostgreSQL database (5GB)
+- 10,000 monthly users
+- $2K current hosting costs
+- Need for rapid scaling capability
+"""
     print("📋 Processing migration request...")
     print("🤖 Orchestrator delegating to specialized agents...\n")
 

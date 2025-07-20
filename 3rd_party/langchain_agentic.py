@@ -158,8 +158,10 @@ def main():
                 HumanMessage(
                     content="Fetch the UK's GDP over the past 5 years, "
                     "then create a bar graph for me to see. "
-                    "Once you code it up, save the bar graph as a png"
-                )
+                    "Once you code it up, save the line graph as a png"
+                ),
+                HumanMessage(content="Fetch the population growth of the INDIA over the past 10 years, "
+                     "then create a bar graph to visualize the trend.")
             ],
         },
         {"recursion_limit": 150},
